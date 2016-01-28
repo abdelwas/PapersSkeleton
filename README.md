@@ -1,1 +1,1 @@
-Latex files for an IEEE paper skeleton.
+Latex files for IEEE papers.
