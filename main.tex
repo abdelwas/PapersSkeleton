@@ -1,0 +1,157 @@
+\documentclass[10pt,journal]{IEEEtran}
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\usepackage[dvips]{graphicx}
+\graphicspath{{./figures/}}
+\DeclareGraphicsExtensions{.eps}
+\usepackage{float}
+%%%
+
+% *** MATH PACKAGES ***
+%
+\usepackage[cmex10]{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclareMathOperator{\erfc}{erfc}
+%%%
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\algsetup{linenosize=\scriptsize}
+\makeatletter
+\newcommand\fs@norules{\def\@fs@cfont{\bfseries}\let\@fs@capt\floatc@ruled
+  \def\@fs@pre{}%
+  \def\@fs@post{}%
+  \def\@fs@mid{\kern3pt}%
+  \let\@fs@iftopcapt\iftrue}
+\makeatother
+\floatstyle{norules}
+\restylefloat{algorithm}
+%%%
+
+% *** SUBFIGURE PACKAGES ***
+%
+\usepackage[tight,footnotesize]{subfigure}
+\usepackage[font=small,skip=5pt]{caption}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+%%%
+
+% *** COLOR PACKAGES ***
+%
+\usepackage[usenames, dvipsnames]{color}
+\newcommand{\colorchange}[1]{{\color{black}#1}}
+%%%
+
+
+% *** OTHER PACKAGES ***
+%
+
+\usepackage{times} % as recommended in http://www.cs.columbia.edu/~hgs/etc/writing-style.html
+% change nested enumeration
+\renewcommand{\labelenumi}{\theenumi.}
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
+\usepackage{enumitem}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+%%%
+
+% *** MY COMMANDS ***
+%
+\newcommand{\protocol}{$\operatorname{Flock}$}
+\newcommand{\sectionname}{Section}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{observation}[theorem]{Observation}
+
+\newenvironment{proof}[1][Proof]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+%\newenvironment{definition}[1][Definition]{\begin{trivlist}
+%\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newcommand{\qed}{\nobreak \ifvmode \relax \else
+      \ifdim\lastskip<1.5em \hskip-\lastskip
+      \hskip1.5em plus0em minus0.5em \fi \nobreak
+      \vrule height0.75em width0.5em depth0.25em\fi}
+
+\newcommand{\comment}[1]{ }
+%%%
+
+
+% *** Bibliography ***
+%
+\usepackage{filecontents}
+\begin{filecontents}{references.bib}
+
+@inproceedings{xyz,
+  title={Some Paper},
+  author={Great Authors},
+  booktitle={Reputable Journal},
+  pages={301--314},
+  year={2011},
+  organization={IEEE}
+}
+
+
+\end{filecontents}
+%%%% END Bibliography
+
+% *** Acrynoms ***
+%
+\usepackage[printonlyused]{acronym}
+\acrodef{iot}[IoT]{Internet of Things}
+%%%
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+
+\title{Title:}
+
+\author{Sherif~Abdelwahab$^*$
+~\\
+$^{\star}$ \small Oregon State University, abdelwas@eecs.orst.edu\\
+\vspace{-20pt}
+}
+
+\maketitle
+\pagenumbering{gobble}
+
+\begin{abstract}
+% 
+\end{abstract}
+
+\begin{IEEEkeywords}
+Word 1, Word 2 
+\end{IEEEkeywords}
+
+\IEEEpeerreviewmaketitle
+
+\section{Introduction}
+\label{intro}
+ \acresetall
+
+\section{Conclusion}
+\label{conclusion}
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,./references}
+
+
+\end{document}
+
+
